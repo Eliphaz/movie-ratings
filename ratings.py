@@ -25,6 +25,10 @@ if entermovie == 'y':
         movie_rating = input(f'what would you rate {movie_name} out of 5: ')
     ratings_dct[movie_name] = movie_rating
 
+sortednames = sorted(ratings_dct, key=lambda x: x.lower())
+sorted_ratings = {}
+for i in sortednames:
+    sorted_ratings[i] = ratings_dct[i]
 
-for k, v in ratings_dct.items():
+for k, v in sorted_ratings.items():
     print(f'the movie {k} is rated at {v}/5')
